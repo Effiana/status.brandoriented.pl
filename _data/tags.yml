@@ -1,9 +1,15 @@
-- slug: apps
+- slug: website
   system: true
-  name: Apps and Runtime
-- slug: data
+  name: BrandOriented Website
+- slug: app
   system: true
-  name: Data Services
-- slug: maintenance
+  name: BrandOriented Application
+- slug: file
   scheduled: true
-  name: Scheduled Maintenance
+  name: BrandOriented File Services
+- slug: file
+  scheduled: true
+  name: BrandOriented File Services
+- slug: api
+  scheduled: true
+  name: BrandOriented API
