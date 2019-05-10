@@ -1,0 +1,50 @@
+---
+---
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+$type-colors: (
+        normal: #4CAF50,
+        degraded-performance: #FFC107,
+        partial-outage: #FF9800,
+        major-outage: #FF5722,
+        scheduled-maintenance: #00BCD4
+);
+
+$state-colors: (
+        normal: #4CAF50,
+        identified: #FFC107,
+        monitoring: #FF5722,
+        investigating: #FF9800,
+        postmortem: #212121
+);
+
+.state-highlight {
+  font-weight: bold;
+  @each $class, $color in $state-colors {
+    &.#{$class} {
+      color: $color;
+    }
+  }
+}
+
+.status-bar {
+  padding: 8px;
+  width: 100%;
+  height: 32px;
+  color: #fafafa;
+  font-size: 1.7em;
+  @each $class, $color in $type-colors {
+    &.#{$class} {
+      background-color: $color;
+    }
+  }
+}

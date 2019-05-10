@@ -1,0 +1,36 @@
+---
+layout: default
+permalink: /
+---
+<h1>{{ site.title }}</h1>
+
+{% for incident in site.incidents reversed %}
+    {% for entry in site.entries reversed %}
+        {% if entry.incident == incident.incident %}
+            {% if entry.state == 'Resolved' %}
+                {% assign class = 'normal' %}
+                {% assign label = 'Everything operating normally' %}
+            {% else %}
+                {% assign class = incident.status | slugify %}
+                {% assign label = incident.status %}
+            {% endif %}
+
+            {% if broken != true %}
+                Current status:
+                <div class="status-bar {{ class }}">{{label}}</div>
+                {% assign broken = true %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+{% for incident in site.incidents reversed %}
+    <h2><a href="{{ incident.url }}">{{ incident.title }}</a></h2>
+    {% for entry in site.entries reversed %}
+        {% if entry.incident == incident.incident %}
+            <small> Last update {{ entry.date | date: '%e %b %Y %H:%M' }}</small>
+            {{ entry.output }}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}

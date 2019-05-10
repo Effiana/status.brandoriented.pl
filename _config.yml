@@ -1,0 +1,9 @@
+title: BrandOriented Status
+baseurl: /
+
+collections:
+ entries:
+   output: false
+ incidents:
+   output: true
+

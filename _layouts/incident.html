@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<a href="/">Back To Homepage</a>
+
+<h1>{{ page.title }}</h1>
+
+{% for entry in site.entries reversed %}
+{% if entry.incident == page.incident %}
+{% if entry.state == 'Resolved' %}
+{% assign class = 'normal' %}
+{% else %}
+{% assign class = entry.state | slugify %}
+{% endif %}
+<p>
+<span class="state-highlight {{ class }}">{{ entry.state }} ({{ entry.date | date: '%Y-%m-%d %H:%M'}})</span> &mdash; 
+{{ entry.output | remove: '<p>' | remove: '</p>' }}
+</p>
+{% endif %}
+{% endfor %}
