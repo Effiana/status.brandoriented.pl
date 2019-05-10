@@ -2,14 +2,11 @@
   system: true
   name: BrandOriented Website
 - slug: app
-  system: true
+  scheduled: true
   name: BrandOriented Application
 - slug: file
-  scheduled: true
-  name: BrandOriented File Services
-- slug: file
-  scheduled: true
+  system: true
   name: BrandOriented File Services
 - slug: api
-  scheduled: true
+  system: true
   name: BrandOriented API
