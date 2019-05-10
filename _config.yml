@@ -1,9 +1,14 @@
-title: BrandOriented Status
-baseurl: /
+url: https://staticus.narro.co
+author: NarroApp
+email: support@narro.co
+title: Staticus
+description: The status page for the Narro API and services
+homepage: https://www.narro.co
 
-collections:
- entries:
-   output: false
- incidents:
-   output: true
+permalink: pretty
+uptime_days: 60
 
+# TODO: Build pagination into archive
+gems: [jekyll-paginate]
+paginate: 2
+paginate_path: '/archive/page:num/'
