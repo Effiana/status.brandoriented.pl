@@ -1,9 +1,9 @@
-url: https://staticus.narro.co
-author: NarroApp
-email: support@narro.co
-title: Staticus
-description: The status page for the Narro API and services
-homepage: https://www.narro.co
+url: https://status.brandoriented.pl
+author: BrandOriented
+email: support@brandoriented.pl
+title: BrandOriented Status
+description: The status page for the BrandOriented services
+homepage: https://brandoriented.pl
 
 permalink: pretty
 uptime_days: 60
